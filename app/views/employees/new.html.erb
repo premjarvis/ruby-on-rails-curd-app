@@ -1,0 +1,74 @@
+<h2> Create a New Record for Employee </h2>
+
+<% if @employee.errors.any? %>
+  <h2> The Following error prevented the employee from being save</h2>
+  <ul>
+    <% @employee.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+
+<%= form_with scope: :employee, url: employees_path, local: true  do |form|  %>
+
+  <div>
+    <%= form.label :fName, "First Name" %> &nbsp &nbsp;
+    <%= form.text_field :fName %>
+  </div> <br>
+
+  <div>
+    <%= form.label :lName, "Last Name" %>  &nbsp &nbsp;
+    <%= form.text_field :lName %>
+  </div> <br>
+
+  <div>
+    <%= form.label :dob, "DOB" %>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp;
+    <%= form.date_field :dob %>
+  </div> <br>
+
+  <div>
+    <%= form.label :gender %> &nbsp &nbsp &nbsp;
+    <%= form.radio_button :gender, "Male" %>
+    <%= form.label :gender, "Male", :value => "Male"  %> &nbsp &nbsp;
+    <%= form.radio_button :gender, "Female" %>
+    <%= form.label :gender, "Female", :value => "Female" %>
+
+  </div> <br>
+
+  <div>
+    <%= form.label :email, "Email" %> &nbsp &nbsp &nbsp &nbsp;
+    <%= form.email_field :email %>
+  </div> <br>
+
+  <div>
+    <%= form.label :mobile, "Mobile No" %>
+    <%= form.telephone_field :mobile %>
+  </div> <br>
+
+  <div>
+    <%= form.label :address, "Address" %> &nbsp &nbsp &nbsp
+    <%= form.text_field :address %>
+  </div> <br>
+
+  <div>
+    <%= form.label :country, "Country" %> &nbsp &nbsp &nbsp
+    <%= form.text_field  :country %>
+  </div> <br>
+
+  <div>
+    <%= form.label :salary, "Salary" %> &nbsp &nbsp &nbsp
+    <%= form.number_field :salary %>
+  </div> <br>
+
+  <div>
+    <%= form.label :socialAccount, "Social Account" %> &nbsp &nbsp
+    <%= form.text_field :socialAccount %>
+  </div> <br> <br>
+
+  <div>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    <%= form.submit %>
+  </div>
+
+<% end %>
