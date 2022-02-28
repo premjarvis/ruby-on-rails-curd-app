@@ -31,10 +31,14 @@
         <td> <%= employee.salary %> </td>
         <td> <%= employee.socialAccount %> </td>
         <td> <button> <%= link_to 'Show', employee_path(employee.id)%> </button> </td>
-        <td> <%= button_to 'Edit' %> </td>
-        <td> <%= button_to 'Delete', employee_path(employee.id), method: :delete %> </td>
-
+        <td>  <button> <%= link_to 'Edit', edit_employee_path(employee.id)%>   </button> </td>
+        <td> <%= button_to 'Delete', employee_path(employee.id), method: :delete , data: { confirm: "Are you sure?"} %> </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+
+<div style="margin-top: 30px; margin-left: 50px">
+  <button> <%= link_to 'Create New Record', new_employee_path %> </button>
+</div>

@@ -10,3 +10,11 @@
 <p><strong> Country:  </strong> <%= @employee.country %> </p>
 <p><strong> Salary:  </strong> <%= @employee.salary %></p>
 <p><strong> Social Account:  </strong> <%= @employee.socialAccount %></p>
+
+
+
+<div>
+  <button style="display: inline-block"> <%= link_to 'Edit', edit_employee_path(@employee.id) %> </button>
+  <%= button_to 'Delete', employee_path(@employee.id), method: :delete, data: { confirm: "Are you sure?"}  %>
+  <button> <%= link_to 'Back', employees_path(@employee) %> </button>
+</div>
