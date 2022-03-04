@@ -14,10 +14,13 @@ class EmployeesController < ApplicationController
   def edit
     @employee = Employee.find(params[:id])
   end
-
+  # def create_user
+  #   puts "Hello"
+  # end
   def create
     # Display the data in console
     # render plain: @employee.inspect
+
     @employee = Employee.new(params.require(:employee).permit(:fName, :lName, :dob, :gender, :email, :mobile, :address, :country, :salary,
             :socialAccount ))
 

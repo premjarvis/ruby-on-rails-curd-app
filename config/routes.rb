@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  root 'pages#home'
   get 'about', to: 'pages#about'
   resources :employees, only: [:show, :index, :new, :create, :edit, :update, :destroy]
   # resources :employees
+  namespace :api do
+    post 'employee/create_emp'
+    get 'employee/show_emp'
+    put 'employee/update_emp'
+    delete 'employee/delete_emp'
+  end
 end
