@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     post 'employee/create_emp'
     get 'employee/show_emp'
-    put 'employee/update_emp'
+    post 'employee/update_emp'
     delete 'employee/delete_emp'
   end
 end
